@@ -1,0 +1,67 @@
+//Intent - open another acivity
+
+Intent intent = new Intent(this, NextActivity.class);
+
+//sending message through intent
+
+intent.putExtra("key", "String value something to pass to the next activity");
+
+//NextActivity - to receive message
+Intent intent = getIntent();
+String vlaue = intent.getStringExtra("key");
+
+//Toast - makeText(Context context, CharSequence text, int duration)
+
+Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT).show();
+
+
+public void onClick(DialogInterface dialog, int which) {
+        switch (which){
+        case DialogInterface.BUTTON_POSITIVE:
+            //Yes button clicked
+            break;
+
+        case DialogInterface.BUTTON_NEGATIVE:
+            //No button clicked
+            break;
+        }
+    }
+};
+
+
+//String.xml
+<String name = "username">User Name</String>
+
+//Media player
+MediaPlayer mediaPlayer;
+
+void play(View view){
+  if(mediaplayer == null){
+    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.songname);
+  }
+}
+
+
+private static final int REQUEST_IMAGE_CAPTURE = 101;
+
+public void takePicture(View view){
+  Intent imageCapture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+  
+  if(imageCapture.resolveActivity(getPackageManager()) != null){
+    startActivityForResult(imageCapture, REQUEST_IMAGE_CAPTURE);
+  }
+}
+
+
+
+
+
+
+//MANIFEST
+
+<uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
