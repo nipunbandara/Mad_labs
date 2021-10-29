@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">lab6_notification</string>
+    <string name="signup">Sign up</string>
+    <string name="email">Email</string>
+    <string name="tphone">Tele Phone</string>
+    <string name="pass">Password</string>
+    <string name="repswrd">Re type Password</string>
+    <string name="reg">Register</string>
+    <string name="cancel">Cancel</string>
+</resources>
