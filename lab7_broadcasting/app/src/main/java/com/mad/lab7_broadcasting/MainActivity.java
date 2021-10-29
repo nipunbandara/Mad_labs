@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     //Receiver declaration
-    
+
     public class Receiver extends BroadcastReceiver {
 
         public void onReceive(Context context, Intent intent){
