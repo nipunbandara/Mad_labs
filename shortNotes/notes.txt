@@ -1,0 +1,146 @@
+//Intent - open another acivity
+
+Intent intent = new Intent(this, NextActivity.class);
+
+//sending message through intent
+
+intent.putExtra("key", "String value something to pass to the next activity");
+
+//NextActivity - to receive message
+Intent intent = getIntent();
+String vlaue = intent.getStringExtra("key");
+
+//Toast - makeText(Context context, CharSequence text, int duration)
+
+Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT).show();
+
+
+public void onClick(DialogInterface dialog, int which) {
+        switch (which){
+        case DialogInterface.BUTTON_POSITIVE:
+            //Yes button clicked
+            break;
+
+        case DialogInterface.BUTTON_NEGATIVE:
+            //No button clicked
+            break;
+        }
+    }
+};
+
+
+//alert declaration
+
+
+AlertDialog alertDialog = new AlertDialog.Builder(this)
+
+//set icon 
+ .setIcon(android.R.drawable.ic_dialog_alert)
+//set title
+.setTitle("Are you sure to Exit")
+//set message
+.setMessage("Exiting will call finish() method")
+//set positive button
+.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+    @Override
+    public void onClick(DialogInterface dialogInterface, int i) {
+   //set what would happen when positive button is clicked    
+        finish();
+    }
+})
+//set negative button
+.setNegativeButton("No", new DialogInterface.OnClickListener() {
+    @Override
+    public void onClick(DialogInterface dialogInterface, int i) {
+   //set what should happen when negative button is clicked
+        Toast.makeText(getApplicationContext(),"Nothing Happened",Toast.LENGTH_LONG).show();
+    }
+})
+.show();
+
+
+
+
+
+
+
+
+//simple validation
+if (TextUtils.isEmpty(usernameString)) {
+                    username.setError("User Name is required");
+                }
+
+//String.xml
+<String name = "username">User Name</String>
+
+
+
+
+//Media player
+MediaPlayer mediaPlayer;
+
+void play(View view){
+  if(mediaplayer == null){
+    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.songname);
+  }
+}
+
+
+
+//image capture code
+private static final int REQUEST_IMAGE_CAPTURE = 101;
+
+public void takePicture(View view){
+  Intent imageCapture = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
+  
+  if(imageCapture.resolveActivity(getPackageManager()) != null){
+    startActivityForResult(imageCapture, REQUEST_IMAGE_CAPTURE);
+  }
+}
+
+
+
+
+
+
+//MANIFEST
+
+<uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+<uses-permission android:name="android.permission.INTERNET"/>
+
+
+
+
+
+
+//Databse
+
+//DbHandler
+
+ public Cursor selectAll(){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + Table_Name, null);
+        return cursor;
+    }
+    
+    
+ //MainActivity
+ 
+ btnView.setOnClickListener((view) = {
+                Cursor result = myDb.selectAll();
+                if(result != null){
+                    while(result.moveToNext()){
+                        Log.d("Student_record", "Student" + result.getString(i:0) + " " + result.getString(i:1) + " " + result.getSring(i:2));
+
+                    }
+                }
+                else{
+                    showMessage();
+                }
+
+        });
