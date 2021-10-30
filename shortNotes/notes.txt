@@ -1,18 +1,28 @@
 //Intent - open another acivity
 
 Intent intent = new Intent(this, NextActivity.class);
+startActivity(intent);
 
 //sending message through intent
 
 intent.putExtra("key", "String value something to pass to the next activity");
+startActivity(intent);
 
 //NextActivity - to receive message
+
 Intent intent = getIntent();
 String vlaue = intent.getStringExtra("key");
+
+
+
 
 //Toast - makeText(Context context, CharSequence text, int duration)
 
 Toast.makeText(getApplicationContext(),"Hello Javatpoint",Toast.LENGTH_SHORT).show();
+
+
+
+//AlertDialog - Yes/No option
 
 
 public void onClick(DialogInterface dialog, int which) {
