@@ -114,33 +114,3 @@ public void takePicture(View view){
 <uses-permission android:name="android.permission.INTERNET"/>
 
 
-
-
-
-
-//Databse
-
-//DbHandler
-
- public Cursor selectAll(){
-        SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + Table_Name, null);
-        return cursor;
-    }
-    
-    
- //MainActivity
- 
- btnView.setOnClickListener((view) = {
-                Cursor result = myDb.selectAll();
-                if(result != null){
-                    while(result.moveToNext()){
-                        Log.d("Student_record", "Student" + result.getString(i:0) + " " + result.getString(i:1) + " " + result.getSring(i:2));
-
-                    }
-                }
-                else{
-                    showMessage();
-                }
-
-        });
